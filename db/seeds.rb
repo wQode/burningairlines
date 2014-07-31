@@ -1,5 +1,5 @@
 Airplane.destroy_all
-Flight. destroy_all
+Flight.destroy_all
 User.destroy_all
 
 
