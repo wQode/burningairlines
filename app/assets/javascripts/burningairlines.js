@@ -6,5 +6,6 @@ $(document).ready( function () {
 		airplaneListView: $('#list-template').html(),
 
 	};
+	
 	app.router = new app.Router();
 })

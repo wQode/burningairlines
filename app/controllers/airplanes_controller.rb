@@ -5,13 +5,6 @@ class AirplanesController < ApplicationController
      render :json => @airplanes    
   end
 
-
-  def index
-    @airplanes = Airplane.all
-
-  end
-
-
   def create
     airplane = Airplane.new airplane_params
     airplane.save

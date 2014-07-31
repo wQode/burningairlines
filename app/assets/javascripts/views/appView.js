@@ -2,10 +2,18 @@ var app = app || {};
 
 app.AppView = Backbone.View.extend({
 	el: '#main', 
-	initalize: function() {
+
+  events: {
+    'click' : 'singleAirplane'
+  },
+
+	initialize: function() {
 		console.log('AppView initalized');
 	},
-	render: function () {
+	render: function () {      
+    // var appView = new app.AppView({collection: airplanes});
+    //   appView.render();
+    // });
 		var airplanes_maker_function = Handlebars.compile(app.templates.appView);
     // var airplane_html = airplanes_maker_function( this.model.toJSON() );
     // this.$el.html(airplane_html);
@@ -19,6 +27,10 @@ app.AppView = Backbone.View.extend({
       view.$el.find('#airplanes_list').append('<p>' +p.get('name')+ '</p>');
     });
 
+  },
 
+  singleAirplane: function(){
+    app.router.navigate('airplane/' + this.$el.get('id'), true );
+    console.log(this);
   }
 });

@@ -3,7 +3,8 @@ var app = app || {};
 app.Router = Backbone.Router.extend({
 	routes: {
 	'': 'index',
-	'about': 'about'
+	'about': 'about',
+	'airplane/:id' : 'showPlane'
 	// 'airplanes/:id': 'getAirplane',
 	// 'flights/:id': 'getFlight',
 	// 'users/:id': 'getUser',
@@ -24,6 +25,19 @@ app.Router = Backbone.Router.extend({
   about: function () {
   	console.log('about page');
   	var aboutView = new app.AboutView();
+  },
+
+  showPlane: function(id){
+
+  		// app.airplanes.fetch().done( function () {
+  		var airplanes = new app.Airplanes();
+  		var airline = airplanes.get(id);
+  		console.log(airline)
+  		// new app.viewAirplane({ model: airline });
+  		// var appView = new app.AppView({collection: airplanes});
+    // 	appView.render();
+  	// });
+
   }
   
 		// // debugger
