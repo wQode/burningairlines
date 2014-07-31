@@ -1,10 +1,12 @@
 var app = app || {};
 
 app.AppView = Backbone.View.extend({
+
   el: '#main',
 
   events: {
-    'click .airplane_name' : 'singleAirplane'
+    'click .airplane_name' : 'singleAirplane',
+    'click #seat' : 'confrimationSeat'
   },
 
   initialize: function() {
@@ -14,6 +16,7 @@ app.AppView = Backbone.View.extend({
   render: function () {
     var airplanes_maker_function = Handlebars.compile(app.templates.appView);
     this.$el.html( app.templates.appView );
+
     var view = this;
 
     this.collection.each(function (p) {
@@ -44,6 +47,11 @@ app.AppView = Backbone.View.extend({
 
     });
 
+  },
+
+  confrimationSeat: function(){
+    console.log((this.$('#seat')).text());
+    alert('You seleted no.' + $('#seat').text()+ " !! fuck.. not working yet @@!@!");
   },
 
   singleAirplane: function(){

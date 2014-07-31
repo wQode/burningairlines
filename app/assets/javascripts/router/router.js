@@ -6,12 +6,13 @@ app.Router = Backbone.Router.extend({
 	'': 'index',
 	'about': 'about',
 	'airplane/:id' : 'showPlane'
-
 	},
+
 	initialize: function() {
 		console.log('Router initialized');
 		Backbone.history.start();
   },
+
   index: function () {
   	airplanes.fetch().done( function () {
   		var appView = new app.AppView({collection: airplanes});
@@ -19,6 +20,7 @@ app.Router = Backbone.Router.extend({
   	});
 
   },
+
   about: function () {
   	console.log('about page');
   	var aboutView = new app.AboutView();
@@ -30,7 +32,6 @@ app.Router = Backbone.Router.extend({
   		console.log(airline)
   		new app.airplaneView({ model: airline });
   }
-
 
 });
 
