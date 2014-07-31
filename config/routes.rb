@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => 'pages#index'
 
-  resources :users
+  resources :users, :airplanes
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
