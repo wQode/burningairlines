@@ -13,7 +13,6 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :flights
-  has_many :reservations
 
   validates :username, :presence => true, :length => { :minimum => 2 }
 end
