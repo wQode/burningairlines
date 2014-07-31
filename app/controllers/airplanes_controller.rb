@@ -22,6 +22,7 @@ class AirplanesController < ApplicationController
 
   def show
     @airplanes = Airplane.find params[:id]
+
   end
 
   def update
