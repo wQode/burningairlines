@@ -1,0 +1,7 @@
+<div class ='user_info'>
+    <p> Welcome <%= @user.username %></p>
+    <p class='show_options'>
+      <%= link_to("Edit", edit_user_path(@user.id)) %>
+      <%= link_to("Delete", user_path(@user.id), :data => { :confirm => 'Are you sure you want to delete this?', :method => :delete }) %>
+    </p>
+</div>
