@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root :to => 'pages#index'
 
-  resources :users
+
+  resources :users, :airplanes
+
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
