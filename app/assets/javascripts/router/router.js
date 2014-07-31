@@ -15,10 +15,10 @@ app.Router = Backbone.Router.extend({
 
 		app.users = new app.Users();
 		app.users.fetch();
-		
+
 		app.reservations = new app.Reservations();
 		app.reservations.fetch();
-		
+
 		app.airplanes = new app.Airplanes();
 		app.airplanes.fetch().done(function (){
 				Backbone.history.start();
