@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  root :to => 'pages#index'
 
-  resources :users
+
+  resources :users, :airplanes
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/login' => 'sessions#destroy'
 end
+<<<<<<< HEAD
+=======
 
 #      root GET    /                         pages#index
 #     users GET    /users(.:format)          users#index
@@ -21,3 +24,4 @@ end
 #     login GET    /login(.:format)          session#new
 #           POST   /login(.:format)          session#create
 #           DELETE /login(.:format)          session#destroy
+>>>>>>> 4cbc75a0bc99c6f1452d9ef1f22ef9d26abcbc76
