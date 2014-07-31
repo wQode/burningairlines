@@ -49,4 +49,5 @@ app.Router = Backbone.Router.extend({
 		var reservation = app.reservations.get(id);
 		new app.ReservationView({model: reservation});
 	}
-})
+});
+
