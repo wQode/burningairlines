@@ -23,13 +23,13 @@ $(document).ready(function(){
   };
 
   app.bookingSeat = function(event) {
-    var $clickedImg = $(event.target);
-    $clickedImg.addClass('reserved');
-    app.$seatNumber = $clickedImg.text();
+    app.$clickedImg = $(event.target);
+    app.$clickedImg.addClass('clicked');
+    app.$seatNumber = app.$clickedImg.text();
     console.log(app.$seatNumber);
-
     var n = app.$seatNumber;
     app.showBookingDetails(n);
+    $('#btnSave').show();
 
     // confirm('You choose seat No.' + seatNumber );
   };
@@ -38,10 +38,15 @@ $(document).ready(function(){
   app.showBookingDetails = function(number){
     $bookingDetailsDiv = $('<div class="booking_details"/>');
     $bookingDetailsDiv.append($('<p id="booked_number"> Seat No. '+ number+' </p>'));
-    $btnSave = $('<button id="btn_save"> Book! </button>');
-    $bookingDetailsDiv.append($btnSave);
+    // $btnSave = $('<button id="btn_save"> Book! </button>');
+
     $('.seat_details').append($bookingDetailsDiv);
+    $('.seat_details').append($('#btnSave'));
     $bookingDetailsDiv.fadeIn();
+  }
+
+  app.seatReservation = function(event){
+    app.$clickedImg.removeClass('clicked').addClass('reserved');
   }
 
 
@@ -66,6 +71,8 @@ $(document).ready(function(){
           app.createSeat(res);
        });
 
-  $('.seat_boxes').on('click', '.seats', app.bookingSeat);
+  $('#btnSave').hide();
 
+  $('.seat_boxes').on('click', '.seats', app.bookingSeat);
+  $('#btnSave').on('click', app.seatReservation);
  }); //end of document ready
