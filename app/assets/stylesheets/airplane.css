@@ -16,11 +16,11 @@
   color:white;
   background-color: red;
 }
-
+/*
 
 h1, p, li  {
   font-family: 'Russo One', sans-serif;
-  
+
 }
 
 body {
@@ -57,7 +57,7 @@ li {
   width: 550px;
   border: 2px solid yellow;
   border-radius: 20px;
-}
+}*/
 
 .seats{
   display: inline-block;
@@ -91,12 +91,17 @@ li {
   font-size: 20px;
 }
 
+#booked_number{
+  color: white;
+  font-size: 20px;
+}
+
 .seat_boxes, .seat_details{
   display: inline-block;
   vertical-align: top;
 }
 
-<<<<<<< HEAD
+
 .clicked{
   background-color: blue;
   color: white;
@@ -122,5 +127,3 @@ li {
 
 
 
-=======
->>>>>>> 487fe9ea8f30dd7e7decdb0b52408e6510a14859
