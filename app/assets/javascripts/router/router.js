@@ -8,30 +8,30 @@ app.Router = Backbone.Router.extend({
 	'airplane/:id' : 'showPlane'
 	},
 
-	initialize: function() {
-		console.log('Router initialized');
-		Backbone.history.start();
-  },
+	// initialize: function() {
+	// 	console.log('Router initialized');
+	// 	Backbone.history.start();
+ //  },
 
-  index: function () {
-  	airplanes.fetch().done( function () {
-  		var appView = new app.AppView({collection: airplanes});
-    	appView.render();
-  	});
+  // index: function () {
+  // 	airplanes.fetch().done( function () {
+  // 		var appView = new app.AppView({collection: airplanes});
+  //   	appView.render();
+  // 	});
 
-  },
+//   },
 
-  about: function () {
-  	console.log('about page');
-  	var aboutView = new app.AboutView();
-  },
+//   about: function () {
+//   	console.log('about page');
+//   	var aboutView = new app.AboutView();
+//   },
 
-  showPlane: function(id){
-  		var airline = airplanes.get(id);
-  		// debugger;
-  		console.log(airline)
-  		new app.airplaneView({ model: airline });
-  }
+//   showPlane: function(id){
+//   		var airline = airplanes.get(id);
+//   		// debugger;
+//   		console.log(airline)
+//   		new app.airplaneView({ model: airline });
+//   }
 
 });
 

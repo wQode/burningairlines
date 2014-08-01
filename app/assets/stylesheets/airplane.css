@@ -17,7 +17,48 @@
   background-color: red;
 }
 
-/* flight index */
+
+h1, p, li  {
+  font-family: 'Russo One', sans-serif;
+  
+}
+
+body {
+  background-image:url(exploding_spaceship.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+  font-size: 36px;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+li {
+  list-style-type :none;
+  underline: none;
+  text-align: center;
+}
+
+.main_show, h1, p, li {
+  display:center;
+  background:rgba(100,100,100, 0.5);
+  text-align: center;
+  margin: 200px auto;
+  width: 550px;
+  border: 2px solid yellow;
+  border-radius: 20px;
+}
+
 .seats{
   display: inline-block;
   margin: 5px;
@@ -55,6 +96,7 @@
   vertical-align: top;
 }
 
+<<<<<<< HEAD
 .clicked{
   background-color: blue;
   color: white;
@@ -80,3 +122,5 @@
 
 
 
+=======
+>>>>>>> 487fe9ea8f30dd7e7decdb0b52408e6510a14859

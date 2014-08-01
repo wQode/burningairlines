@@ -1,6 +1,19 @@
 
-<h1>POOR Flight</h1>
+<h1>flights index</h1>
+<ul>
+<% @flights.each do |flight| %>
+  <li>
+    <%= link_to flight.id, flight %>
+  </li>
+  <% end %>
+</ul>
+
+<h1>Flight Burn</h1>
 
 <div class="seat_boxes"></div>
 <div class="seat_details"></div>
+<<<<<<< HEAD
 <button id="btnSave"> Book! </button>
+=======
+
+>>>>>>> 487fe9ea8f30dd7e7decdb0b52408e6510a14859
