@@ -6,7 +6,7 @@ app.AppView = Backbone.View.extend({
 
   events: {
     'click .airplane_name' : 'singleAirplane',
-    'click .seat' : 'confrimationSeat'
+    'click .seat' : 'confirmationSeat'
   },
 
   initialize: function() {
@@ -49,7 +49,7 @@ app.AppView = Backbone.View.extend({
 
   },
 
-  confrimationSeat: function(){
+  confirmationSeat: function(){
     console.log((this.$('.seat')).text());
     alert('You seleted no.' + $('.seat').text()+ " !! fuck.. not working yet @@!@!");
   },
