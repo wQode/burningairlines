@@ -6,7 +6,7 @@ app.AppView = Backbone.View.extend({
 
   events: {
     'click .airplane_name' : 'singleAirplane',
-    'click #seat' : 'confrimationSeat'
+    'click .seat' : 'confrimationSeat'
   },
 
   initialize: function() {
@@ -41,7 +41,7 @@ app.AppView = Backbone.View.extend({
 
        for(var s=0; s<$totalSeatNumber+1; s++){
           //var $airplaneSeatDiv = ('<div class="airplaneSeatDiv"/>')
-          var $seat = $('<div id="seat">'+ s +'</div>');
+          var $seat = $('<div class="seat">'+'<p id='+ s +'>'+s +'</p></div>');
           $('#main').append($seat);
       };
 
@@ -50,8 +50,8 @@ app.AppView = Backbone.View.extend({
   },
 
   confrimationSeat: function(){
-    console.log((this.$('#seat')).text());
-    alert('You seleted no.' + $('#seat').text()+ " !! fuck.. not working yet @@!@!");
+    console.log((this.$('.seat')).text());
+    alert('You seleted no.' + $('.seat').text()+ " !! fuck.. not working yet @@!@!");
   },
 
   singleAirplane: function(){
