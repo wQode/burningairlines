@@ -6,7 +6,7 @@ app.AppView = Backbone.View.extend({
 
   events: {
     'click .airplane_name' : 'singleAirplane',
-    'click #seat' : 'confrimationSeat'
+    'click .seat' : 'confirmationSeat'
   },
 
   initialize: function() {
@@ -14,7 +14,7 @@ app.AppView = Backbone.View.extend({
   },
 
   render: function () {
-    var airplanes_maker_function = Handlebars.compile(app.templates.appView);
+    //var airplanes_maker_function = Handlebars.compile(app.templates.appView);
     this.$el.html( app.templates.appView );
 
     var view = this;
@@ -35,13 +35,13 @@ app.AppView = Backbone.View.extend({
 //////// so it is showing two flight seat, but once the single page works it will be ok!
        var $row = p.get('rows');
        var $colums = p.get('colums');
-       console.log($row);
-       console.log($colums);
+       // console.log($row);
+       // console.log($colums);
        var $totalSeatNumber = $row * $colums
 
        for(var s=0; s<$totalSeatNumber+1; s++){
           //var $airplaneSeatDiv = ('<div class="airplaneSeatDiv"/>')
-          var $seat = $('<div id="seat">'+ s +'</div>');
+          var $seat = $('<div class="seat">'+'<p id='+ s +'>'+s +'</p></div>');
           $('#main').append($seat);
       };
 
@@ -49,9 +49,9 @@ app.AppView = Backbone.View.extend({
 
   },
 
-  confrimationSeat: function(){
-    console.log((this.$('#seat')).text());
-    alert('You seleted no.' + $('#seat').text()+ " !! fuck.. not working yet @@!@!");
+  confirmationSeat: function(){
+    console.log((this.$('.seat')).text());
+    alert('You seleted no.' + $('.seat').text()+ " !! fuck.. not working yet @@!@!");
   },
 
   singleAirplane: function(){

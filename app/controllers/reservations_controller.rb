@@ -27,6 +27,6 @@ class ReservationsController < ApplicationController
     def reservation_params
       params.require(:reservation).permit(:user_id, :flight_id)
     end
-  end
-  
+
+
 end
