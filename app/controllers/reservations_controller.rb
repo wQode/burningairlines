@@ -1,4 +1,4 @@
-class ReseravationsController < ApplicationController
+class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
       respond_to do |format|
@@ -24,7 +24,7 @@ class ReseravationsController < ApplicationController
 
 
   private
-    def reseravation_params
+    def reservation_params
       params.require(:reservation).permit(:user_id, :flight_id)
     end
   end
