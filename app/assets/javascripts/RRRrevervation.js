@@ -1,36 +1,83 @@
-
+var rows = 5;
+var colunms = 5;
+var app = {};
 
 $(document).ready(function(){
 
+  // console.log('isdifjsf');
+  // var showFlight = function(){
+  //   $.ajax({
+  //       url: '/flights',
+  //       method: 'get',
+  //       dataType: 'json'
+  //     ).done(function(res) {
+  //       console.log(res);
+  //     });
+  //  };
 
-var showFlight = function(){
 
-  var flight_name = $('#flight_name').val();
-  var flight_origin = $('#flight_origin').val();
-  var flight_destination = $('#flight_destination').val();
-  var flight_date = $('#flight_date').val();
+  app.createSeat = function(res) {
+    console.log('create seat', res)
 
-  $.ajax({
-      url: '/flights',
-      method: 'post',
-      dataType: 'json',
-      data: {
-        name: flight_name,
-        origin: flight_origin,
-        destination: flight_destination,
-        date: flight_date
-        // flight.airplane.rows:
-        // flight.airplane.colums
-      },
+    var ids = _.pluck(res, 'seat_number');
+    console.log(ids);
+    $totalSeatNumber = (rows) * (colunms)
 
-      success: function(response) {
+     for(var s=0; s<$totalSeatNumber+3; s++){
+      $seat = ('<div class="seats"><p id="seat'+s+'">'+ s +'</p></div>');
+      $reservedSeat = ('<div class="seats reserved"><p id="seat'+s+'">'+ s +'</p></div>');
+      if (_.contains(ids, s + '')) {
+        $('.seat_boxes').append($reservedSeat);
+      } else {
+        $('.seat_boxes').append($seat);
+      }
+    }
+  };
 
-        console.log('whthe hfoidsl');
+  app.bookingSeat = function(event) {
+    var $clickedImg = $(event.target);
+    $clickedImg.addClass('reserved');
+    app.$seatNumber = $clickedImg.text();
+    console.log(app.$seatNumber);
 
-        $p = $('<p id="flight_name">'+ flight_name +'</p>');
+    var n = app.$seatNumber;
+    app.showBookingDetails(n);
 
-      };
+    // confirm('You choose seat No.' + seatNumber );
+  };
 
-    });
+
+  app.showBookingDetails = function(number){
+    $bookingDetailsDiv = $('<div class="booking_details"/>');
+    $bookingDetailsDiv.append($('<p id="booked_number"> Seat No. '+ number+' </p>'));
+    $btnSave = $('<button id="btn_save"> Book! </button>');
+    $bookingDetailsDiv.append($btnSave);
+    $('.seat_details').append($bookingDetailsDiv);
+    $bookingDetailsDiv.fadeIn();
+  }
+
+
+  app.saveSeat =function(){
+         $.ajax({
+          url: '/reservations',
+          method: 'post',
+          dataType: 'json'
+          }).done(function(response) {
+            console.log(response);
+
+            // createSeat();
+          });
+  }
+
+      $.ajax({
+          url: '/reservations',
+          method: 'get',
+          dataType: 'json'
+        }).done(function(res) {
+          console.log(res);
+          app.createSeat(res);
+       });
+
+  $('.seat_boxes').on('click', '.seats', app.bookingSeat);
 
  }); //end of document ready

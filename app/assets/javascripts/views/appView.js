@@ -14,7 +14,7 @@ app.AppView = Backbone.View.extend({
   },
 
   render: function () {
-    var airplanes_maker_function = Handlebars.compile(app.templates.appView);
+    //var airplanes_maker_function = Handlebars.compile(app.templates.appView);
     this.$el.html( app.templates.appView );
 
     var view = this;
@@ -35,8 +35,8 @@ app.AppView = Backbone.View.extend({
 //////// so it is showing two flight seat, but once the single page works it will be ok!
        var $row = p.get('rows');
        var $colums = p.get('colums');
-       console.log($row);
-       console.log($colums);
+       // console.log($row);
+       // console.log($colums);
        var $totalSeatNumber = $row * $colums
 
        for(var s=0; s<$totalSeatNumber+1; s++){
