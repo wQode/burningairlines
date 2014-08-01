@@ -4,18 +4,6 @@ var app = {};
 
 $(document).ready(function(){
 
-  // console.log('isdifjsf');
-  // var showFlight = function(){
-  //   $.ajax({
-  //       url: '/flights',
-  //       method: 'get',
-  //       dataType: 'json'
-  //     ).done(function(res) {
-  //       console.log(res);
-  //     });
-  //  };
-
-
   app.createSeat = function(res) {
     console.log('create seat', res)
 
