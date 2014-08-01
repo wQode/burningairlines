@@ -1,0 +1,8 @@
+<h1>reservations index</h1>
+<ul>
+<% @reservations.each do |reservation| %>
+  <li>
+    <%= link_to reservation.id, reservation %>
+  </li>
+  <% end %>
+</ul>
