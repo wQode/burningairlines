@@ -17,10 +17,15 @@
   background-color: red;
 }
 
+
 /*
+=======
+/*
+
+>>>>>>> 1bdec47c0bab4eb28629e4bdad7f991ac3a71b95
 h1, p, li  {
   font-family: 'Russo One', sans-serif;
-  
+
 }
 
 body {
@@ -65,11 +70,12 @@ li {
   border: 1px solid red;
   width: 50px;
   height: 50px;
-  text-align: center;
+
 }
 
 .reserved {
   background: red;
+  color: white;
 }
 
 .seat_boxes{
@@ -86,10 +92,43 @@ li {
   margin-bottom: 10px;
   width: 250px;
   height: 100px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#booked_number{
+  color: white;
+  font-size: 20px;
 }
 
 .seat_boxes, .seat_details{
   display: inline-block;
   vertical-align: top;
 }
+
+
+.clicked{
+  background-color: blue;
+  color: white;
+}
+
+#btnSave{
+  padding: 5px;
+  background-color: red;
+  color: white;
+  width: 150px;
+  height: 70px;
+  font-size: 30px;
+  margin-left: 250px;
+
+}
+
+.seats p{
+/*  width: 50px;
+  height: 50px;*/
+  text-align: center;
+
+}
+
+
 
