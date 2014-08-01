@@ -1,11 +1,7 @@
-<h1>single flight show</h1>
+<h1>Flight <%= "#{@flight.name}" %></h1>
 <p>
-  <%= 'flight id: ' + @flight.id %> <br>
-  <%= 'flight name: ' + @flight.name %> <br>
-  <%= 'flight origin: ' + @flight.origin %> <br>
-  <%= 'flight destination: ' + @flight.destination %> <br>
-  <%= 'flight date: ' + @flight.date %> <br>
-
-  <%= 'airplane configuration: ' + @airplane.rows + 'rows & ' + @airplane.colums + ' columns'%> <br>
-
+  <%= "origin: #{@flight.origin}" %> <br>
+  <%= "destination: #{@flight.destination}" %> <br>
+  <%= "date: #{@flight.date}" %> <br>
+  <%= "configuration: #{@flight.airplane.rows} rows by #{@flight.airplane.colums} columns" %> <br>
 </p>
