@@ -1,0 +1,8 @@
+<h1>flights index</h1>
+<ul>
+<% @flights.each do |flight| %>
+  <li>
+    <%= link_to flight.id, flight %>
+  </li>
+  <% end %>
+</ul>
