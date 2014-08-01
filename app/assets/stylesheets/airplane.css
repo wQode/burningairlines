@@ -17,7 +17,7 @@
   background-color: red;
 }
 
-
+/*
 h1, p, li  {
   font-family: 'Russo One', sans-serif;
   
@@ -48,8 +48,8 @@ li {
   underline: none;
   text-align: center;
 }
-
-.main_show, h1, p, li {
+*/
+/*.main_show{
   display:center;
   background:rgba(100,100,100, 0.5);
   text-align: center;
@@ -57,7 +57,7 @@ li {
   width: 550px;
   border: 2px solid yellow;
   border-radius: 20px;
-}
+}*/
 
 .seats{
   display: inline-block;
